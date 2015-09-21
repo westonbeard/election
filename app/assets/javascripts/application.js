@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require bootstrap.min
 //= require_tree .
+
+$(document).ready(function(){
+    $('#new-voter-btn').click(function(){
+        $("div[class='modal fade']").modal();
+    });
+});
