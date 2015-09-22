@@ -14,3 +14,24 @@
  *= require_self
  *= require bootstrap.min
  */
+
+ .container{
+ 	text-align: center;
+ }
+
+@media screen and (min-width: 768px) {
+	
+	.modal-content{
+		width:300px;
+	}
+
+}
+
+#new-voter-form input[type='text']{
+	padding:2px 16px 2px 4px;
+	margin: 0 0 8px;
+}
+
+h1{
+	text-align: center;
+}

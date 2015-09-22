@@ -22,6 +22,45 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function() {
-  $('#new-voter-form-submit-btn').on('click', function() { $('#new-voter-form').submit(); });
-});
+submittingMethod = {
+	submittingForm : function(){
+		$('#new-voter-form-submit-btn').on('click', function() { $('#new-voter-form').submit() });
+
+	}
+}
+
+var $form = $('#new-voter-form');
+$form.submit(function(e){
+	e.preventDefault();
+	var $firstname = $('#first-name'),
+	$lastname = $('#last-name'),
+	$address = $('#address'),
+	$city = $('#city'),
+	$state = $('#state'),
+	$zip = $('#zip');
+
+	$.ajax({
+		url: '/voters',
+		data: $form.serialize(),
+		dataType: 'html',
+		type: 'POST',
+		success: function(){
+			$('.modal-body').append('<div class="alert alert--success">Voter successfully added!</div>')
+			alert("casdfasdf");
+			$("div[class='modal fade']").modal();	
+
+		}
+	})
+})
+
+
+
+
+
+
+
+
+
+
+
+

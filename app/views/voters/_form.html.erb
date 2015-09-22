@@ -12,28 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, placeholder:"First Name", id:"form-first-name" %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, placeholder:"Last Name", id:"form-last-name"%>
   </div>
   <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, placeholder:"Address", id: "form-address"%>
   </div>
   <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, placeholder: "City", id: "form-city" %>
   </div>
   <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.text_field :state, placeholder: "State", id: "form-state"%>
   </div>
   <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.number_field :zip %>
+    <%= f.number_field :zip, placeholder: "Zip Code", id: "form-zip"%>
   </div>
 
 <% end %>
