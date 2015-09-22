@@ -22,22 +22,21 @@ $(document).ready(function(){
     });
 });
 
-submittingMethod = {
-	submittingForm : function(){
-		$('#new-voter-form-submit-btn').on('click', function() { $('#new-voter-form').submit() });
+// $(document).ready(function() {
 
-	}
-}
+// });
+// $(document).ready(function() {
+// 	$('#new-voter-form-submit-btn').on('click', function() { $('#new-voter-form').submit(); });
+// });
 
 var $form = $('#new-voter-form');
-$form.submit(function(e){
-	e.preventDefault();
-	var $firstname = $('#first-name'),
-	$lastname = $('#last-name'),
-	$address = $('#address'),
-	$city = $('#city'),
-	$state = $('#state'),
-	$zip = $('#zip');
+function submitForm(){
+	var $firstname = $('#form-first-name'),
+	$lastname = $('#form-last-name'),
+	$address = $('#form-address'),
+	$city = $('#form-city'),
+	$state = $('#form-state'),
+	$zip = $('#form-zip');
 
 	$.ajax({
 		url: '/voters',
@@ -50,8 +49,8 @@ $form.submit(function(e){
 			$("div[class='modal fade']").modal();	
 
 		}
-	})
-})
+	});
+}
 
 
 

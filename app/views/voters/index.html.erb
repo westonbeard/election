@@ -52,8 +52,8 @@
       </div>
       <div class='col-md-1'>
         <td><%= link_to 'Show', voter %></td>
-        <td><%= link_to 'Edit', edit_voter_pah2(voter) %></td>
-        <td><%= link_to 'Destroy', voter, meh2od: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_voter_path(voter) %></td>
+        <td><%= link_to 'Destroy', voter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </div>
       </tr>
     <% end %>
