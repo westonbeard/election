@@ -21,3 +21,7 @@ $(document).ready(function(){
         $("div[class='modal fade']").modal();
     });
 });
+
+$(document).ready(function() {
+  $('#new-voter-form-submit-btn').on('click', function() { $('#new-voter-form').submit(); });
+});
