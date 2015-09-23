@@ -36,20 +36,56 @@ function submitForm(){
 	$address = $('#form-address'),
 	$city = $('#form-city'),
 	$state = $('#form-state'),
-	$zip = $('#form-zip');
+	$zip = $('#form-zip'),
+	$alert = $('.alert');
 
-	$.ajax({
-		url: '/voters',
-		data: $form.serialize(),
-		dataType: 'html',
-		type: 'POST',
-		success: function(){
-			$('.modal-body').append('<div class="alert alert--success">Voter successfully added!</div>')
-			alert("casdfasdf");
-			$("div[class='modal fade']").modal();	
+	// These are form validations. Alerting the user if he/she has a validation error
 
-		}
-	});
+	if($firstname.val() == ""){
+		$firstname.css({"border-color": "#ff0000", 
+	             "border-width":"3px", 
+	             "border-style":"solid"})
+	$form.append('<div class="alert alert--error">Please enter a First Name</div>');
+	}else if($lastname.val() == ""){
+		$alert.html("");
+		$lastname.css({"border-color": "#ff0000", 
+	             "border-width":"3px", 
+	             "border-style":"solid"})
+	$form.append('<div class="alert alert--error">Please enter a Last Name</div>');
+	}else if($city.val() == ""){
+		$alert.html("");
+		$city.css({"border-color": "#ff0000", 
+	             "border-width":"3px", 
+	             "border-style":"solid"})
+	$form.append('<div class="alert alert--error">Please enter a City</div>');
+	}else if($state.val() == ""){
+		$alert.html("");
+		$state.css({"border-color": "#ff0000", 
+	             "border-width":"3px", 
+	             "border-style":"solid"})
+	$form.append('<div class="alert alert--error">Please enter a State</div>');
+	}else if($zip.val() == ""){
+		$alert.html("");
+		$zip.css({"border-color": "#ff0000", 
+	             "border-width":"3px", 
+	             "border-style":"solid"})
+	$form.append('<div class="alert alert--error">Please enter a Zip Code</div>');
+	}else{
+
+		$.ajax({
+			url: '/voters',
+			data: $form.serialize(),
+			dataType: 'html',
+			type: 'POST',
+			success: function(){
+				$('.modal-body').append('<div class="alert alert--success">Voter successfully added!</div>')
+				alert("casdfasdf");
+				$('#mymodal').modal('hide');
+
+
+			}
+		});
+	};
 }
 
 

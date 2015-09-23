@@ -11,8 +11,8 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require bootstrap.min
+ *= require_self
  */
 
  .container{
@@ -34,4 +34,10 @@
 
 h1{
 	text-align: center;
+}
+
+.alert{
+	color:red;
+	margin-bottom: 0px;
+	padding:0px;
 }
