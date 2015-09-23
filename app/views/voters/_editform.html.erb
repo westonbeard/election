@@ -1,0 +1,34 @@
+<%= form_for @voter, :html => {:id => 'new-voter-form'} do |f| %>
+  <% if @voter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@voter.errors.count, "error") %> prohibited this voter from being saved:</h2>
+
+      <ul>
+      <% @voter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :first_name, placeholder:"First Name", id:"form-first-name" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :last_name, placeholder:"Last Name", id:"form-last-name"%>
+  </div>
+  <div class="field">
+    <%= f.text_field :address, placeholder:"Address", id: "form-address"%>
+  </div>
+  <div class="field">
+    <%= f.text_field :city, placeholder: "City", id: "form-city" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :state, placeholder: "State", id: "form-state"%>
+  </div>
+  <div class="field">
+    <%= f.number_field :zip, placeholder: "Zip Code", id: "form-zip"%>
+  </div>
+  <%=f.submit %>
+  
+<% end %>
